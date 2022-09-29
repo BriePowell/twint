@@ -330,14 +330,18 @@ def main():
         run.Search(c)
 
 
+# def run_as_command():
+#     version = ".".join(str(v) for v in sys.version_info[:2])
+#     if float(version) < 3.6:
+#         print("[-] TWINT requires Python version 3.6+.")
+#         sys.exit(0)
+
+#     main()
 def run_as_command():
-    version = ".".join(str(v) for v in sys.version_info[:2])
-    if float(version) < 3.6:
-        print("[-] TWINT requires Python version 3.6+.")
+    if sys.version_info[:2] < (3, 6):
+        print("[-] TWINT requires python version 3.6+")
         sys.exit(0)
-
     main()
-
 
 if __name__ == '__main__':
     main()
